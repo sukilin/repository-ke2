@@ -1,0 +1,31 @@
+## Uncomment the following two lines to add software from Canonical's
+## 'partner' repository.
+## This software is not part of Ubuntu, but is offered by Canonical and the
+## respective vendors as a service to Ubuntu users.
+# deb http://archive.canonical.com/ubuntu focal partner
+# deb-src http://archive.canonical.com/ubuntu focal partner
+
+# deb http://security.ubuntu.com/ubuntu focal-security main restricted
+# deb-src http://security.ubuntu.com/ubuntu focal-security main restricted
+# deb http://security.ubuntu.com/ubuntu focal-security universe
+# deb-src http://security.ubuntu.com/ubuntu focal-security universe
+# deb http://security.ubuntu.com/ubuntu focal-security multiverse
+# deb-src http://security.ubuntu.com/ubuntu focal-security multiverse
+
+# This system was installed using small removable media
+# (e.g. netinst, live or single CD). The matching "deb cdrom"
+# entries were disabled at the end of the installation process.
+# For information about how to configure apt package sources,
+# see the sources.list(5) manual.
+
+# deb http://archive.ubuntu.com/ubuntu/ cosmic -proposed universe # for 19.04 ganti cosmic dengan disco
+# deb https://dl.winehq.org/wine-builds/ubuntu/ xenial main
+# deb-src https://dl.winehq.org/wine-builds/ubuntu/ xenial main
+# deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main
+# deb-src https://dl.winehq.org/wine-builds/ubuntu/ bionic main
+# deb https://dl.winehq.org/wine-builds/ubuntu/ focal main
+# deb-src https://dl.winehq.org/wine-builds/ubuntu/ focal main
+# deb http://dl.winehq.org/wine-builds/ubuntu/ bionic main
+# deb-src http://dl.winehq.org/wine-builds/ubuntu/ bionic main
+# deb http://archive.ubuntu.com/ubuntu focal universe
+

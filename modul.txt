@@ -1,0 +1,32 @@
+pip install key
+pip install keyboard
+pip install mouse
+pip install time
+pip install os
+pip install random
+pip install socket
+pip install win32gui
+pip install email-to
+pip install mime
+pip install category-encoders
+smtplib
+sys
+phonenumbers
+pip install turtle
+pywhatkit
+base64
+RSA
+fernet
+webbrowser
+ctypes
+urllib.request
+datetime
+thrading
+json
+shutil
+pywhatkit
+requests
+pyautogui
+
+
+python3 json module

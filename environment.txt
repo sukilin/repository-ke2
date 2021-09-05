@@ -1,0 +1,13 @@
+pypi.org
+
+virtual environment:
+
+python3 -m pip install --user virtualenv
+cd project_folder
+virtualenv venv
+pip3 install cowsay
+source venv/bin/activets
+
+
+
+pip uninstall cowsay

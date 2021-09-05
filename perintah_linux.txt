@@ -1,0 +1,15 @@
+
+	MEMBUKA FILE DI LINUX :
+
+.tar.gz
+	tar -xf (namafile.tar.gz)
+	tar -xzvf nama_file.tar.gz
+.rar
+	unrar e namaFile.rar
+	unrar x namafile.rar
+
+
+ip route show
+	cek ip router wifi
+	letak ip dibaris pertama
+	contoh: default via 192.168.1.1 dev wlp1s0 proto dhcp metric 600
